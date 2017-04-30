@@ -5,7 +5,7 @@ require "base64"
 module Obfuscate
   class << self
     def cipher
-      OpenSSL::Cipher::Cipher.new("aes-256-cbc")
+      OpenSSL::Cipher.new('AES-256-CBC')
     end
 
     def cipher_key
