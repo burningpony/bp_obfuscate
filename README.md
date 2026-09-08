@@ -1,8 +1,10 @@
 # BpObfuscate
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bp_obfuscate`. To experiment with that code, run `bin/console` for an interactive prompt.
+A simple wrapper around OpenSSL to easily encrypt/obfuscate data.
 
-TODO: Delete this and the text above, and describe your gem
+Inside a Rails application the key comes from the app's `secret_key_base`;
+outside of Rails it comes from `ENV["SECRET_KEY_BASE"]`. Works on Rails 4.1
+through Rails 8.
 
 ## Installation
 
@@ -12,30 +14,37 @@ Add this line to your application's Gemfile:
 gem 'bp_obfuscate'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+And then run `bundle`. Or install it yourself as:
 
     $ gem install bp_obfuscate
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+token = Obfuscate.encrypt("user-42")   # => "rIMK7MWO-u-gLdi7qVKU8A=="
+Obfuscate.decrypt(token)               # => "user-42"
+Obfuscate.decrypt("garbage")           # => nil
+```
+
+`decrypt` returns `nil` instead of raising when it can't decrypt a value, so
+it's safe to call on untrusted input such as a URL parameter.
+
+If no key is available, `BpObfuscate::NoCipherKey` is raised.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Run `bin/setup` to install dependencies, `bundle exec rspec` for the tests, and
+`bin/console` for an interactive prompt.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To release a new version, update the version number in `version.rb` and run
+`bundle exec rake release`.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/bp_obfuscate. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+Bug reports and pull requests are welcome on GitHub at
+https://github.com/rposborne/bp_obfuscate.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+Available as open source under the terms of the
+[MIT License](http://opensource.org/licenses/MIT).
