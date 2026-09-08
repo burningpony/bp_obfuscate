@@ -1,5 +1,7 @@
 # BpObfuscate
 
+[![CI](https://github.com/burningpony/bp_obfuscate/actions/workflows/ci.yml/badge.svg)](https://github.com/burningpony/bp_obfuscate/actions/workflows/ci.yml)
+
 A simple wrapper around OpenSSL to easily encrypt/obfuscate data.
 
 Inside a Rails application the key comes from the app's `secret_key_base`;
