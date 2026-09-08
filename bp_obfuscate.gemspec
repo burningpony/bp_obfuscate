@@ -39,7 +39,7 @@ Gem::Specification.new do |spec|
   # Deliberately open-ended: it is a stdlib shim, so any future version will do.
   spec.add_dependency "base64", ">= 0.1"
 
-  spec.add_development_dependency "bundler", ">= 1.13", "< 3"
+  spec.add_development_dependency "bundler", ">= 1.13", "< 5"
   spec.add_development_dependency "rake", ">= 12.0", "< 14"
   spec.add_development_dependency "rspec", "~> 3.0"
 end
