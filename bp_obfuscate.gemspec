@@ -22,6 +22,9 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 2.7"
 
+  # base64 stopped being a default gem in Ruby 3.4, so it has to be declared.
+  spec.add_dependency "base64", ">= 0.1"
+
   spec.add_development_dependency "bundler", ">= 1.13"
   spec.add_development_dependency "rake", ">= 12.0"
   spec.add_development_dependency "rspec", "~> 3.0"
