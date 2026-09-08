@@ -4,7 +4,7 @@ All notable changes to this project are documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - 2026-09-08
+## [0.2.1] - 2026-09-08
 
 ### Added
 
@@ -50,6 +50,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Initial release.
 
-[0.2.0]: https://github.com/burningpony/bp_obfuscate/compare/v0.1.1...v0.2.0
+[0.2.1]: https://github.com/burningpony/bp_obfuscate/compare/v0.1.1...v0.2.1
 [0.1.1]: https://github.com/burningpony/bp_obfuscate/compare/v0.1.0...v0.1.1
 [0.1.0]: https://github.com/burningpony/bp_obfuscate/releases/tag/v0.1.0
